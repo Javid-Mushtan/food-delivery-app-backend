@@ -1,0 +1,38 @@
+package com.javid.food_delivery.models;
+
+import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+@Document(collection = "users")
+@Data
+public class User {
+
+    @Id
+    private String id;
+
+    private String username;
+
+    private String email;
+
+    private String password;
+
+    private String phone;
+
+    private UserRole role = UserRole.CUSTOMER;  // Default value
+
+    private List<Address> addresses = new ArrayList<>();
+
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
+
+}
