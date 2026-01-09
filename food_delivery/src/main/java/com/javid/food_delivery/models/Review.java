@@ -11,20 +11,19 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
-@AllArgsConstructor
+@Document(collection = "reviews")
 @NoArgsConstructor
-@Document(collection = "payments")
-public class Payment {
+@AllArgsConstructor
+public class Review {
+
     @Id
     private String id;
-
-    private String orderId;
     private String userId;
-    private PaymentMethod paymentMethod;
-    private BigDecimal amount;
-    private String transactionId;
-    private String status;
+    private String resturantId;
+    private String orderId;
+    private BigDecimal rating;
+    private String comment;
 
     @CreatedDate
-    private LocalDateTime paidAt;
+    private LocalDateTime createdAt;
 }
