@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class MenuItem {
     @Id
     private String id;
-    private String resturant_id;
+    private String resturantId;
     private String name;
     private String description;
     private BigDecimal price;

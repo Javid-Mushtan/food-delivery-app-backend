@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ResturantService {
@@ -16,4 +18,9 @@ public class ResturantService {
     public Resturant createResturant(Resturant resturant) {
         return resturantRepository.save(resturant);
     }
+
+    public List<Resturant> getAllResturants() {
+        return resturantRepository.findAll();
+    }
+
 }
